@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "animus-coop.vscode-elixir-mix-formatter",
+    "royalmist.vscode-eex-format",
+    "adamzapasnik.elixir-test-explorer",
+    "jakebecker.elixir-ls",
+    "petalframework.vscode-petal-components-snippets",
+    "bradlc.vscode-tailwindcss",
+    "pantajoe.vscode-elixir-credo",
+    "pedromsluz.vscode-phoenix",
+    "phoenixframework.phoenix",
+    "jamilabreu.vscode-phoenix-snippets"
+  ]
+}
