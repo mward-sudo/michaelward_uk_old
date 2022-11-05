@@ -1,34 +1,79 @@
-# The directory Mix will write compiled artifacts to.
-/_build/
+# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
+# Created by https://www.toptal.com/developers/gitignore/api/macos,elixir,phoenix
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,elixir,phoenix
 
-# If you run "mix test --cover", coverage assets end up here.
-/cover/
-
-# The directory Mix downloads your dependencies sources to.
-/deps/
-
-# Where 3rd-party dependencies like ExDoc output generated docs.
-/doc/
-
-# Ignore .fetch files in case you like to edit your project deps locally.
+### Elixir ###
+/_build
+/cover
+/deps
+/doc
 /.fetch
-
-# If the VM crashes, it generates a dump, let's ignore it too.
 erl_crash.dump
-
-# Also ignore archive artifacts (built via "mix archive.build").
 *.ez
+*.beam
+/config/*.secret.exs
+.elixir_ls/
 
-# Ignore package tarball (built via "mix hex.build").
-michaelward_uk-*.tar
+### Elixir Patch ###
 
-# Ignore assets that are produced by build tools.
-/priv/static/assets/
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# Ignore digested assets cache.
-/priv/static/cache_manifest.json
+# Icon must end with two \r
+Icon
 
-# In case you use Node.js/npm, you want to ignore these.
-npm-debug.log
-/assets/node_modules/
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+### Phoenix ###
+# gitignore template for Phoenix projects
+# website: http://www.phoenixframework.org/
+#
+# Recommended template: Elixir.gitignore
+
+# Temporary files
+/tmp
+
+# Static artifacts
+/node_modules
+/assets/node_modules
+
+# Since we are building assets from web/static,
+# we ignore priv/static. You may want to comment
+# this depending on your deployment strategy.
+/priv/static/
+
+# Installer-related files
+/installer/_build
+/installer/tmp
+/installer/doc
+/installer/deps
+
+# End of https://www.toptal.com/developers/gitignore/api/macos,elixir,phoenix
+
+# Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
