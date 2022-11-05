@@ -26,7 +26,8 @@ config :michaelward_uk, MichaelwardUkWeb.Endpoint,
   secret_key_base: "MzXtKU3EKxaYwdHZk+tmy0X2X/7KIVjhikNe1TpEvvOwJC95EL4nal1djRHCZ5cc",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
