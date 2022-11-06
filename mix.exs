@@ -51,7 +51,8 @@ defmodule MichaelwardUk.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
-      {:petal_components, "~> 0.18"}
+      {:petal_components, "~> 0.18"},
+      {:plug_canonical_host, "~> 2.0"}
     ]
   end
 
