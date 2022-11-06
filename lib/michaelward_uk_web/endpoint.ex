@@ -1,18 +1,21 @@
 defmodule MichaelwardUkWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :michaelward_uk
 
-  plug(:canonical_host)
+  require Logger
+
+  plug :canonical_host
 
   defp canonical_host(conn, _opts) do
-    :my_app
-    |> Application.get_env(:canonical_host)
-    |> case do
-      host when is_binary(host) ->
-        opts = PlugCanonicalHost.init(canonical_host: host)
-        PlugCanonicalHost.call(conn, opts)
+    canonical_host = Application.get_env(:michaelward_uk, :canonical_host)
 
-      _ ->
-        conn
+    Logger.info("1. Canonical host: #{canonical_host}")
+    Logger.info("2. Host: #{conn.host}")
+
+    if canonical_host do
+      opts = PlugCanonicalHost.init(canonical_host: canonical_host)
+      PlugCanonicalHost.call(conn, opts)
+    else
+      conn
     end
   end
 
