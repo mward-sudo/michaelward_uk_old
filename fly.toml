@@ -11,6 +11,7 @@ processes = []
 [env]
   PHX_HOST = "long-sunset-2135.fly.dev"
   PORT = "8080"
+  CANONICAL_HOST = "michaelward.uk"
 
 [experimental]
   allowed_public_ports = []
