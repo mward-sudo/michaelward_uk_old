@@ -6,16 +6,18 @@ defmodule MichaelwardUkWeb.Endpoint do
   plug :canonical_host
 
   defp canonical_host(conn, _opts) do
-    canonical_host = Application.get_env(:michaelward_uk, :canonical_host)
+    Logger.info("Canonical host: #{Application.get_env(:michaelward_uk, :canonical_host)}")
+    Logger.info("Host: #{conn.host}")
 
-    Logger.info("1. Canonical host: #{canonical_host}")
-    Logger.info("2. Host: #{conn.host}")
+    :michaelward_uk
+    |> Application.get_env(:canonical_host)
+    |> case do
+      host when is_binary(host) ->
+        opts = PlugCanonicalHost.init(canonical_host: host)
+        PlugCanonicalHost.call(conn, opts)
 
-    if canonical_host do
-      opts = PlugCanonicalHost.init(canonical_host: canonical_host)
-      PlugCanonicalHost.call(conn, opts)
-    else
-      conn
+      _ ->
+        conn
     end
   end
 

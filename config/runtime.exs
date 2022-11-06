@@ -20,6 +20,9 @@ if System.get_env("PHX_SERVER") do
   config :michaelward_uk, MichaelwardUkWeb.Endpoint, server: true
 end
 
+config :michaelward_uk,
+  canonical_host: System.get_env("CANONICAL_HOST")
+
 if config_env() == :prod do
   database_url =
     System.get_env("DATABASE_URL") ||
