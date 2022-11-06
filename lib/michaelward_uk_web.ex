@@ -98,6 +98,8 @@ defmodule MichaelwardUkWeb do
       import MichaelwardUkWeb.ErrorHelpers
       import MichaelwardUkWeb.Gettext
       alias MichaelwardUkWeb.Router.Helpers, as: Routes
+
+      use PetalComponents
     end
   end
 
