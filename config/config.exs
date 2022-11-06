@@ -7,6 +7,9 @@
 # General application configuration
 import Config
 
+config :my_app,
+  canonical_host: System.get_env("CANONICAL_HOST")
+
 config :michaelward_uk,
   ecto_repos: [MichaelwardUk.Repo]
 

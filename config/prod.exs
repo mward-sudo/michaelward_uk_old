@@ -15,9 +15,6 @@ config :michaelward_uk, MichaelwardUkWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
-config :my_app,
-  canonical_host: System.get_env("CANONICAL_HOST")
-
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
