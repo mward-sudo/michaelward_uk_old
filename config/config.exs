@@ -7,7 +7,7 @@
 # General application configuration
 import Config
 
-config :my_app,
+config :michaelward_uk,
   canonical_host: System.get_env("CANONICAL_HOST")
 
 config :michaelward_uk,
