@@ -5,38 +5,50 @@
     </span>
   </.h1>
 
-  <.h2 class="text-2xl mt-0 mb-16">Full Stack Web Developer since 2002</.h2>
+  <.h2 class="text-2xl mt-0 mb-16 leading-[1.3em]">Full Stack Web Developer since 2002</.h2>
 
   <section>
     <.h3 class="text-2xl mt-24">Technology Stack</.h3>
-    <div class="mb-2">
-      <.badge color="primary" label="HTML" />
-      <.badge color="primary" label="CSS" />
-      <.badge color="primary" label="JAVASCRIPT" />
-      <.badge color="primary" label="MYSQL" />
-      <.badge color="primary" label="POSTGRESQL" />
-      <.badge color="primary" label="LINUX" />
-      <.badge color="primary" label="CLOUD" />
-    </div>
+    <div class="flex flex-wrap flex-grow justify-center gap-4">
+      <div class="bg-stone-800 p-4 rounded min-w-[20rem] max-w-5xl">
+        <h4 class="mt-0">Frontend</h4>
+        <.badge color="primary" label="HTML" />
+        <.badge color="primary" label="CSS" />
+        <.badge color="primary" label="JavaScript" />
+      </div>
 
-    <div class="mb-2">
-      <.badge color="primary" label="ELIXIR" />
-      <.badge color="secondary" label="Phoenix" />
-      <.badge color="secondary" label="LiveView" />
-      <.badge color="secondary" label="Ecto" />
-    </div>
+      <div class="bg-stone-800 p-4 rounded min-w-[20rem] max-w-5xl">
+        <h4 class="mt-0">Backend languages & frameworks</h4>
+        <div class="mb-2">
+          <.badge color="primary" label="PHP" />
+          <.badge color="secondary" label="Laravel" />
+          <.badge color="secondary" label="Slim" />
+        </div>
+        <div class="mb-2">
+          <.badge color="primary" label="TypeScript" />
+          <.badge color="secondary" label="React" />
+          <.badge color="secondary" label="Next.js" />
+          <.badge color="secondary" label="Remix" />
+        </div>
+        <div class="mb-2">
+          <.badge color="primary" label="Elixir" />
+          <.badge color="secondary" label="Elixir Phoenix" />
+          <.badge color="secondary" label="Phoenix LiveView" />
+        </div>
+      </div>
+      
+      <div class="bg-stone-800 p-4 rounded min-w-[20rem] max-w-5xl justify-center ">
+        <h4 class="mt-0">Databases &amp; ORM&lsquo;s</h4>
+        <.badge color="primary" label="MYSQL" />
+        <.badge color="primary" label="POSTGRESQL" />
+        <.badge color="secondary" label="Ecto" />
+      </div>
 
-    <div class="mb-2">
-      <.badge color="primary" label="REACT" />
-      <.badge color="secondary" label="TypeScript" />
-      <.badge color="secondary" label="Next.js" />
-      <.badge color="secondary" label="Remix" />
-    </div>
-
-    <div class="mb-2">
-      <.badge color="primary" label="PHP" />
-      <.badge color="secondary" label="Laravel" />
-      <.badge color="secondary" label="Slim" /> 
+      <div class="bg-stone-800 p-4 rounded min-w-[20rem] max-w-5xl justify-center ">
+        <h4 class="mt-0">Operating Systems &amp; Infrastructure</h4>
+        <.badge color="primary" label="Linux" />
+        <.badge color="primary" label="Cloud" />
+      </div>
     </div>
   </section>
 </article>
