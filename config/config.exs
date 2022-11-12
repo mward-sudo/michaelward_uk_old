@@ -13,9 +13,12 @@ config :michaelward_uk,
 # Configures the endpoint
 config :michaelward_uk, MichaelwardUkWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: MichaelwardUkWeb.ErrorView, accepts: ~w(html json), layout: false],
+  render_errors: [
+    formats: [html: MichaelwardUkWeb.ErrorHTML, json: MichaelwardUkWeb.ErrorJSON],
+    layout: false
+  ],
   pubsub_server: MichaelwardUk.PubSub,
-  live_view: [signing_salt: "D0EFh3Xa"]
+  live_view: [signing_salt: "Ii9SVr3z"]
 
 # Configures the mailer
 #
@@ -26,17 +29,26 @@ config :michaelward_uk, MichaelwardUkWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :michaelward_uk, MichaelwardUk.Mailer, adapter: Swoosh.Adapters.Local
 
-# Swoosh API client is needed for adapters other than SMTP.
-config :swoosh, :api_client, false
-
 # Configure esbuild (the version is required)
 config :esbuild,
-  version: "0.14.29",
+  version: "0.14.41",
   default: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ]
+
+# Configure tailwind (the version is required)
+config :tailwind,
+  version: "3.1.8",
+  default: [
+    args: ~w(
+      --config=tailwind.config.js
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../assets", __DIR__)
   ]
 
 # Configures Elixir's Logger
@@ -46,17 +58,6 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
-
-config :tailwind,
-  version: "3.2.1",
-  default: [
-    args: ~w(
-    --config=tailwind.config.js
-    --input=css/app.css
-    --output=../priv/static/assets/app.css
-  ),
-    cd: Path.expand("../assets", __DIR__)
-  ]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
