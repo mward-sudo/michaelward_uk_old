@@ -13,6 +13,8 @@ erl_crash.dump
 *.beam
 /config/*.secret.exs
 .elixir_ls/
+/.fetch
+michaelward_uk-*.tar
 
 ### Elixir Patch ###
 
@@ -49,7 +51,7 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
-### Phoenix ###
+### Phoenix ###w
 # gitignore template for Phoenix projects
 # website: http://www.phoenixframework.org/
 #

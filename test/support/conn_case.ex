@@ -19,15 +19,15 @@ defmodule MichaelwardUkWeb.ConnCase do
 
   using do
     quote do
+      # The default endpoint for testing
+      @endpoint MichaelwardUkWeb.Endpoint
+
+      use MichaelwardUkWeb, :verified_routes
+
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
       import MichaelwardUkWeb.ConnCase
-
-      alias MichaelwardUkWeb.Router.Helpers, as: Routes
-
-      # The default endpoint for testing
-      @endpoint MichaelwardUkWeb.Endpoint
     end
   end
 
