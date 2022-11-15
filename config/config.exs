@@ -10,6 +10,11 @@ import Config
 config :michaelward_uk,
   ecto_repos: [MichaelwardUk.Repo]
 
+config :michaelward_uk, :generators,
+  migration: true,
+  binary_id: true,
+  sample_binary_id: "11111111-1111-1111-1111-111111111111"
+
 # Configures the endpoint
 config :michaelward_uk, MichaelwardUkWeb.Endpoint,
   url: [host: "localhost"],

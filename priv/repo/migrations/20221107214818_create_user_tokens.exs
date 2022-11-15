@@ -4,9 +4,9 @@ defmodule MichaelwardUk.Repo.Migrations.CreateUserTokens do
   def change do
     create table(:user_tokens, primary_key: false) do
       add :id, :binary_id, primary_key: true
-      add :token, :binary
-      add :context, :string
-      add :user_id, references(:users, on_delete: :nothing, type: :binary_id)
+      add :token, :binary, nil: false
+      add :context, :string, nil: false
+      add :user_id, references(:users, on_delete: :delete_all, type: :binary_id)
 
       timestamps()
     end

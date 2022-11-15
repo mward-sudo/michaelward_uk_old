@@ -44,7 +44,7 @@ defmodule MichaelwardUk.Accounts do
 
   ## Examples
 
-      iex> get_user_by(username: "michael")
+      iex> get_user_by(:username, "michael")
       %User{}
   """
   def get_user_by(key, value, preloads \\ []) when is_atom(key) do

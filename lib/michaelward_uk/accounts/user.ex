@@ -19,7 +19,7 @@ defmodule MichaelwardUk.Accounts.User do
     user
     |> cast(attrs, [:username])
     |> validate_required([:username])
-    |> unique_constraint(:username)
+    |> unique_constraint([:username])
     |> cast_assoc(:keys, with: &UserKey.new_changeset/2)
     |> cast_assoc(:tokens)
   end

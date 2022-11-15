@@ -23,12 +23,14 @@ import {LiveSocket} from "phoenix_live_view"
 import topbar from "../vendor/topbar"
 import { WebAuthn } from "webauthn_live_component"
 
+let getUserToken = () => window.sessionStorage.getItem("user_token") || "";
+
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 
 let hooks = { WebAuthn };
 
 let liveSocket = new LiveSocket("/live", Socket, {
-  params: {_csrf_token: csrfToken},
+  params: {_csrf_token: csrfToken, _user_token: getUserToken()},
   hooks: hooks
 })
 

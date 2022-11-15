@@ -1,5 +1,6 @@
 defmodule MichaelwardUkWeb.Router do
   use MichaelwardUkWeb, :router
+  alias MichaelwardUkWeb.Hooks.User, as: UserHook
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -14,10 +15,13 @@ defmodule MichaelwardUkWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", MichaelwardUkWeb do
-    pipe_through :browser
+  live_session :default, on_mount: {UserHook, :default} do
+    scope "/", MichaelwardUkWeb do
+      pipe_through :browser
 
-    get "/", PageController, :home
+      get "/", PageController, :home
+      live "/auth", Live.Auth, :auth
+    end
   end
 
   # Other scopes may use custom stacks.
