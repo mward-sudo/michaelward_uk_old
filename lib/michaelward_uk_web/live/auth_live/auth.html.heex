@@ -1,0 +1,15 @@
+<h1>Authentication</h1>
+<%= if @current_user do %>
+  <div class="my-4 p-4 text-2xl bg-indigo-800 text-center">
+    You are signed in to the demo webauthn app!
+    <a phx-click="sign_out" class="text-indigo-200 underline">Sign out</a>
+  </div>
+<% else %>
+  <.live_component
+    module={WebAuthnLiveComponent}
+    id="auth_form"
+    authenticate_label="Sign In"
+    register_label="New Account"
+    app={:michaelward_uk}
+  />
+<% end %>

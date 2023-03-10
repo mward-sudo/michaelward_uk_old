@@ -53,7 +53,9 @@ defmodule MichaelwardUk.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:petal_components, "~> 0.18"},
-      {:plug_canonical_host, "~> 2.0"}
+      {:plug_canonical_host, "~> 2.0"},
+      {:webauthn_live_component,
+       github: "liveshowy/webauthn_live_component", branch: "23-update_deps"}
     ]
   end
 
