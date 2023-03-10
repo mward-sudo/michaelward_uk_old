@@ -58,7 +58,7 @@ config :michaelward_uk, MichaelwardUkWeb.Endpoint,
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/michaelward_uk_web/(live|views)/.*(ex)$",
+      ~r"lib/michaelward_uk_web/(controllers|live|components)/.*(ex|heex)$",
       ~r"lib/michaelward_uk_web/templates/.*(eex)$"
     ]
   ]

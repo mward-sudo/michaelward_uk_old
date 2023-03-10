@@ -27,7 +27,8 @@ defmodule MichaelwardUkWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_michaelward_uk_key",
-    signing_salt: "Ii4qKbK5"
+    signing_salt: "Ii4qKbK5",
+    same_site: "Lax"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]

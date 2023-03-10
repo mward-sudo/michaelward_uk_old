@@ -39,7 +39,6 @@ defmodule MichaelwardUkWeb do
   def controller do
     quote do
       use Phoenix.Controller,
-        namespace: MichaelwardUkWeb,
         formats: [:html, :json],
         layouts: [html: MichaelwardUkWeb.Layouts]
 
